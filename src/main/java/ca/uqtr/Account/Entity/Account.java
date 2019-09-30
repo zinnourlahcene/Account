@@ -14,7 +14,7 @@ public class Account extends BaseEntity {
     String username;
     @Column(name = "password")
     String password;
-    @Column(name = "isActive")
+    @Column(name = "is_active")
     Boolean isActive;
 
 

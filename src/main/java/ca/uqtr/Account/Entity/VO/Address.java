@@ -11,11 +11,11 @@ public class Address {
 
     @Column(name = "street")
     String street;
-    @Column(name = "streetNumber")
-    String streetNumber;
+    @Column(name = "street_number")
+    Integer streetNumber;
     @Column(name = "city")
     String city;
-    @Column(name = "postalCode")
+    @Column(name = "postal_code")
     String postalCode;
     @Column(name = "province")
     String province;

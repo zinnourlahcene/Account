@@ -36,7 +36,7 @@ public class AccountController {
      * @return A bool.
      * @throws Exception If there are no matches at all.
      */
-    @PostMapping
+    @PostMapping("signin")
     public ResponseEntity<SigninResDTO> signin(@RequestBody SigninDTO signinDTO){
         SigninResDTO sign_in = new SigninResDTO();
         try {
@@ -56,7 +56,7 @@ public class AccountController {
      * @return A bool.
      * @throws Exception If there are no matches at all.
      */
-    @PostMapping
+    @PostMapping("/signup")
     public ResponseEntity<SignupResDTO> signup(@RequestBody SignupDTO signupDTO){
 
         SignupResDTO sign_up = new SignupResDTO();

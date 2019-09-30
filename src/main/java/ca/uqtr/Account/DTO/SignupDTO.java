@@ -1,7 +1,6 @@
 package ca.uqtr.Account.DTO;
 
-import ca.uqtr.Account.Entity.Account;
-import ca.uqtr.Account.Entity.Profession;
+import ca.uqtr.Account.Entity.Profile;
 import ca.uqtr.Account.Entity.VO.Address;
 import ca.uqtr.Account.Entity.VO.Email;
 import ca.uqtr.Account.Entity.VO.Institution;
@@ -30,7 +29,7 @@ public class SignupDTO implements Serializable {
     Date birthday;
     @NotNull
     @NotEmpty
-    Profession profession;
+    Profile profile;
     @NotNull
     @NotEmpty
     Address address;

@@ -10,9 +10,9 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Institution {
 
-    @Column(name = "institutionName")
+    @Column(name = "institution_name")
     String institutionName;
-    @Column(name = "institutionCode")
+    @Column(name = "institution_code")
     String institutionCode;
 
 }

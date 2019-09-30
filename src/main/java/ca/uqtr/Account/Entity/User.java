@@ -14,25 +14,25 @@ import java.util.Date;
 @Table(name = "user")
 public class User extends BaseEntity {
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     String firstName;
-    @Column(name = "midlleName")
+    @Column(name = "midlle_name")
     String midlleName;
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     String lastName;
     @Temporal(value=TemporalType.DATE)
     @Column(name = "birthday")
     Date birthday;
     @Enumerated(EnumType.STRING)
-    @Column(name = "profession")
-    Profession profession;
+    @Column(name = "profile")
+    Profile profile;
     @Embedded
     Address address;
     @Embedded
     Email email;
     @Embedded
     Institution institution;
-    @JoinColumn(name = "account_id", unique = true)
+    @JoinColumn(name = "id", unique = true)
     @OneToOne(cascade = CascadeType.ALL)
     Account account;
 }

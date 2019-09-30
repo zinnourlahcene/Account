@@ -5,13 +5,11 @@ import ca.uqtr.Account.DTO.SigninDTO;
 import ca.uqtr.Account.DTO.SigninResDTO;
 import ca.uqtr.Account.DTO.SignupDTO;
 import ca.uqtr.Account.DTO.SignupResDTO;
-import ca.uqtr.Account.Entity.Account;
 import ca.uqtr.Account.Entity.User;
 import ca.uqtr.Account.Repository.AccountRepository;
 import ca.uqtr.Account.Repository.UserRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -58,7 +56,7 @@ public class AccountServiceImpl implements AccountService {
             return signupResDTO;
         }
 
-        if (signupDTO.getProfession() == null){
+        if (signupDTO.getProfile() == null){
             signupResDTO.setProfessionIsSet(false);
             return signupResDTO;
         }

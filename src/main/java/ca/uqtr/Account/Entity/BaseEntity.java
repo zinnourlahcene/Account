@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.UUID;
 
-@Entity
 @Data
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
