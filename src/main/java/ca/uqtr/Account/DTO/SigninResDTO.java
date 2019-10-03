@@ -2,8 +2,8 @@ package ca.uqtr.Account.DTO;
 
 public class SigninResDTO {
 
-    Boolean userNameExist;
-    Boolean passwordIsTrue;
+    private Boolean userNameExist;
+    private Boolean passwordIsTrue;
 
     public SigninResDTO() {
     }

@@ -2,9 +2,9 @@ package ca.uqtr.Account.DTO;
 
 public class SignupResDTO {
 
-    Boolean emailExist;
-    Boolean professionIsSet;
-    Boolean isSignup;
+    private Boolean emailExist;
+    private Boolean professionIsSet;
+    private Boolean isSignup;
 
     public SignupResDTO() {
     }

@@ -5,7 +5,8 @@ import ca.uqtr.Account.DTO.SigninDTO;
 import ca.uqtr.Account.DTO.SigninResDTO;
 import ca.uqtr.Account.DTO.SignupDTO;
 import ca.uqtr.Account.DTO.SignupResDTO;
-import ca.uqtr.Account.Entity.User;
+import ca.uqtr.Account.Entity.Account;
+import ca.uqtr.Account.Entity.Users;
 import ca.uqtr.Account.Repository.AccountRepository;
 import ca.uqtr.Account.Repository.UserRepository;
 import org.springframework.beans.BeanUtils;
@@ -47,9 +48,22 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public SignupResDTO signUp(SignupDTO signupDTO) {
-        User user = new User();
-        BeanUtils.copyProperties(signupDTO, user);
+        Users users = new Users(
+                signupDTO.getFirstName(),
+                signupDTO.getMidlleName(),
+                signupDTO.getLastName(),
+                signupDTO.getBirthday(),
+                signupDTO.getProfile(),
+                signupDTO.getAddress(),
+                signupDTO.getEmail(),
+                signupDTO.getInstitution());
+        Account account = new Account(signupDTO.getAccount().getUsername(),
+                signupDTO.getAccount().getPassword(),
+                signupDTO.getAccount().getIsActive());
 
+        users.setAccount(account);
+        account.setUser(users);
+        //BeanUtils.copyProperties(signupDTO, users);
         SignupResDTO signupResDTO = new SignupResDTO();
         if (userRepository.findByEmail(signupDTO.getEmail().getValue()) != null){
             signupResDTO.setEmailExist(true);
@@ -60,7 +74,7 @@ public class AccountServiceImpl implements AccountService {
             signupResDTO.setProfessionIsSet(false);
             return signupResDTO;
         }
-        userRepository.save(user);
+        userRepository.save(users);
         signupResDTO.setProfessionIsSet(true);
         signupResDTO.isSignup(true);
 

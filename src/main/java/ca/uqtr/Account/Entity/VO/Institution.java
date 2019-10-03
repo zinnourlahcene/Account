@@ -1,18 +1,21 @@
 package ca.uqtr.Account.Entity.VO;
 
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-@Value
+@NoArgsConstructor
+@AllArgsConstructor
 @Embeddable
 public class Institution {
 
     @Column(name = "institution_name")
-    String institutionName;
+    private String institutionName;
     @Column(name = "institution_code")
-    String institutionCode;
+    private String institutionCode;
 
 }

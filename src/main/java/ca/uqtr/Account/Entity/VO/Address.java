@@ -1,23 +1,26 @@
 package ca.uqtr.Account.Entity.VO;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-@Value
+@NoArgsConstructor
+@AllArgsConstructor
 @Embeddable
 public class Address {
 
     @Column(name = "street")
-    String street;
+    private String street;
     @Column(name = "street_number")
-    Integer streetNumber;
+    private Integer streetNumber;
     @Column(name = "city")
-    String city;
+    private String city;
     @Column(name = "postal_code")
-    String postalCode;
+    private String postalCode;
     @Column(name = "province")
-    String province;
+    private String province;
 
 }

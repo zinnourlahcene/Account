@@ -1,10 +1,13 @@
 package ca.uqtr.Account.DTO;
 
+import ca.uqtr.Account.Entity.Account;
 import ca.uqtr.Account.Entity.Profile;
 import ca.uqtr.Account.Entity.VO.Address;
 import ca.uqtr.Account.Entity.VO.Email;
 import ca.uqtr.Account.Entity.VO.Institution;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -12,31 +15,36 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SignupDTO implements Serializable {
 
     static final long serialVersionUID = 1L;
     @NotNull
     @NotEmpty
-    String firstName;
+    private String firstName;
     @NotNull
     @NotEmpty
-    String midlleName;
+    private String midlleName;
     @NotNull
     @NotEmpty
-    String lastName;
+    private String lastName;
     @NotNull
     @NotEmpty
-    Date birthday;
+    private Date birthday;
     @NotNull
     @NotEmpty
-    Profile profile;
+    private Profile profile;
     @NotNull
     @NotEmpty
-    Address address;
+    private Address address;
     @NotNull
     @NotEmpty
-    Email email;
+    private Email email;
     @NotNull
     @NotEmpty
-    Institution institution;
+    private Institution institution;
+    @NotNull
+    @NotEmpty
+    private Account account;
 }
