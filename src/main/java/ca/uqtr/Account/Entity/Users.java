@@ -49,5 +49,4 @@ public class Users extends BaseEntity {
         this.institution = institution;
     }
 
-
 }
