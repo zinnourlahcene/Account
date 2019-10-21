@@ -1,5 +1,9 @@
 package ca.uqtr.Account.DTO;
 
+import lombok.ToString;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
+@ToString
 public class SigninResDTO {
 
     private Boolean userNameExist;

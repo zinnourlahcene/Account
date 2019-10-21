@@ -15,16 +15,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name = "users", schema = "public")
-public class Users  {
-    @Id
-    @GeneratedValue(generator  = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "id", updatable = false, nullable = false)
-    UUID id;
+public class Users extends BaseEntity {
 
-    @Version
-    @Column(name = "version", nullable = false)
-    private int version;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "midlle_name")
@@ -56,4 +48,6 @@ public class Users  {
         this.email = email;
         this.institution = institution;
     }
+
+    
 }

@@ -33,10 +33,11 @@ public abstract class AbstractAccountControllerTests {
     @Test
     public void signInTest() {
         Logger.getGlobal().info("Start signInTest test");
-        ResponseEntity<SigninResDTO> account = accountController.signin(new SigninDTO("", ""));
+        ResponseEntity<SigninResDTO> account = accountController.signin(new SigninDTO("lacen", "pass"));
         Assert.assertEquals(HttpStatus.OK, account.getStatusCode());
         Assert.assertTrue(account.hasBody());
         Assert.assertNotNull(account.getBody());
+        Logger.getGlobal().info(String.valueOf(account.toString()));
         Logger.getGlobal().info("End signInTest test");
     }
 
