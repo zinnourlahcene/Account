@@ -48,6 +48,6 @@ public class Users extends BaseEntity {
         this.email = email;
         this.institution = institution;
     }
-    
+
 
 }
