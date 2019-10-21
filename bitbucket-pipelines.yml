@@ -14,3 +14,8 @@ pipelines:
           # You must commit the Gradle wrapper to your repository
           # https://docs.gradle.org/current/userguide/gradle_wrapper.html
           - bash ./gradlew build
+          - pipe: atlassian/heroku-deploy:1.1.0
+            variables:
+              HEROKU_API_KEY: $HEROKU_API_KEY
+              HEROKU_APP_NAME: $HEROKU_APP_NAME
+              ZIP_FILE: 'epod_account.tar.gz'
